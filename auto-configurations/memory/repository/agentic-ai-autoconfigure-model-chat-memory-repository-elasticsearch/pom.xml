@@ -6,7 +6,7 @@
   ~ you may not use this file except in compliance with the License.
   ~ You may obtain a copy of the License at
   ~
-  ~ https://www.apache.org/licenses/LICENSE-2.0
+  ~     https://www.apache.org/licenses/LICENSE-2.0
   ~
   ~ Unless required by applicable law or agreed to in writing, software
   ~ distributed under the License is distributed on an "AS IS" BASIS,
@@ -20,35 +20,14 @@
         <groupId>io.github.agentic-ai</groupId>
         <artifactId>agentic-ai-extensions</artifactId>
         <version>${revision}</version>
-        <relativePath>../../../pom.xml</relativePath>
+        <relativePath>../../../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>agentic-ai-autoconfigure-mcp-router</artifactId>
-
-    <name>Agentic AI Nacos Mcp Router Autoconfiguration</name>
-    <description>Agentic AI Nacos Mcp Router Autoconfiguration</description>
+    <artifactId>agentic-ai-autoconfigure-model-chat-memory-repository-elasticsearch</artifactId>
+    <name>Agentic AI Elasticsearch Chat Memory Auto Configuration</name>
+    <description>Agentic AI Elasticsearch Chat Memory Auto Configuration</description>
     <url>https://github.com/agentic-spring-ai/agentic-spring-ai-extensions</url>
 
-    <licenses>
-        <license>
-            <name>Apache 2.0</name>
-            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
-
-    <developers>
-        <developer>
-            <id>yuluo-yx</id>
-            <name>yuluo-yx</name>
-            <url>https://github.com/yuluo-yx</url>
-        </developer>
-        <developer>
-            <id>Aias00</id>
-            <name>Aias00</name>
-            <url>https://github.com/Aias00</url>
-        </developer>
-    </developers>
     <scm>
         <connection>git://github.com/agentic-spring-ai/agentic-spring-ai-extensions.git</connection>
         <developerConnection>git@github.com:agentic-spring-ai/agentic-spring-ai-extensions.git</developerConnection>
@@ -56,19 +35,36 @@
     </scm>
 
     <dependencies>
-
         <dependency>
-            <groupId>io.github.agentic-ai</groupId>
-            <artifactId>agentic-ai-mcp-router</artifactId>
-            <version>${revision}</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
-
         <dependency>
-            <groupId>org.springframework.ai</groupId>
-            <artifactId>spring-ai-starter-mcp-server</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure-processor</artifactId>
             <optional>true</optional>
         </dependency>
 
+        <dependency>
+            <groupId>io.github.agentic-ai</groupId>
+            <artifactId>agentic-ai-model-chat-memory-repository-elasticsearch</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.agentic-ai</groupId>
+            <artifactId>agentic-ai-autoconfigure-model-chat-memory</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>co.elastic.clients</groupId>
+            <artifactId>elasticsearch-java</artifactId>
+            <optional>true</optional>
+        </dependency>
     </dependencies>
 
 </project>

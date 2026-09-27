@@ -21,13 +21,35 @@
         <groupId>io.github.agentic-ai</groupId>
         <artifactId>agentic-ai-extensions</artifactId>
         <version>${revision}</version>
-        <relativePath>../../pom.xml</relativePath>
+        <relativePath>../../../pom.xml</relativePath>
     </parent>
 
-    <artifactId>agentic-ai-rag</artifactId>
-    <name>Agentic AI RAG</name>
-    <description>RAG for Agentic AI</description>
+    <artifactId>agentic-ai-autoconfigure-model-chat-memory-mem0</artifactId>
+
+    <name>Agentic AI Long Memory Autoconfiguration</name>
+    <description>Agentic AI Long Memory Autoconfiguration</description>
     <url>https://github.com/agentic-spring-ai/agentic-spring-ai-extensions</url>
+
+    <licenses>
+        <license>
+            <name>Apache 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>yuluo-yx</id>
+            <name>yuluo-yx</name>
+            <url>https://github.com/yuluo-yx</url>
+        </developer>
+        <developer>
+            <id>Aias00</id>
+            <name>Aias00</name>
+            <url>https://github.com/Aias00</url>
+        </developer>
+    </developers>
     <scm>
         <connection>git://github.com/agentic-spring-ai/agentic-spring-ai-extensions.git</connection>
         <developerConnection>git@github.com:agentic-spring-ai/agentic-spring-ai-extensions.git</developerConnection>
@@ -43,60 +65,24 @@
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
-
-        <dependency>
-            <groupId>org.springframework.ai</groupId>
-            <artifactId>spring-ai-rag</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.ai</groupId>
-            <artifactId>spring-ai-starter-vector-store-elasticsearch</artifactId>
-        </dependency>
-
-        <!-- TestContainers -->
-        <dependency>
-            <groupId>org.testcontainers</groupId>
-            <artifactId>testcontainers-junit-jupiter</artifactId>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.testcontainers</groupId>
-            <artifactId>testcontainers-elasticsearch</artifactId>
-            <scope>test</scope>
-        </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-elasticsearch</artifactId>
-            <scope>test</scope>
+            <artifactId>spring-boot-autoconfigure-processor</artifactId>
+            <optional>true</optional>
         </dependency>
 
+        <dependency>
+            <groupId>io.github.agentic-ai</groupId>
+            <artifactId>agentic-ai-model-chat-memory-repository-mem0</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <configuration>
-                    <skipTests>true</skipTests>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 
 </project>
