@@ -141,7 +141,7 @@ public class PythonService implements BiFunction<PythonService.Request, ToolCont
      * Create a ToolCallback for the Python tool.
      */
     public static ToolCallback createPythonToolCallback(String description) {
-        return FunctionToolCallback.builder("python", new PythonService())
+        return FunctionToolCallback.builder("python", new PythonService()::apply)
                 .description(description)
                 .inputType(Request.class)
                 .build();
